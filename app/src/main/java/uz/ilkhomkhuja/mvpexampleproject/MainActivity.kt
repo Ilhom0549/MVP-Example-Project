@@ -8,8 +8,8 @@ import uz.ilkhomkhuja.mvpexampleproject.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity(), Contact.View {
 
     lateinit var binding: ActivityMainBinding
-
     var presenter: Presenter? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -17,7 +17,6 @@ class MainActivity : AppCompatActivity(), Contact.View {
 
         presenter = Presenter(this, Model())
         binding.button.setOnClickListener { presenter?.onButtonClick() }
-
     }
 
     override fun showProgress() {
